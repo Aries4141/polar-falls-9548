@@ -36,16 +36,21 @@ public class Main {
 		}
 
 		Server server = new Server(Integer.valueOf(webPort));
+
 		WebAppContext root = new WebAppContext();
+		root.setAttribute(
+				"org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
+				".*/build/classes/");
+
+		root.setConfigurations(new Configuration[] {
+				new AnnotationConfiguration() , new WebXmlConfiguration()/*,
+				new WebInfConfiguration(), new TagLibConfiguration(),
+				new PlusConfiguration(), new MetaInfConfiguration(),
+				new FragmentConfiguration(), new EnvConfiguration() */});
 
 		root.setContextPath("/");
 		root.setDescriptor(webappDirLocation + "/WEB-INF/web.xml");
 		root.setResourceBase(webappDirLocation);
-
-		root.setConfigurations(new Configuration[] {
-				new AnnotationConfiguration(), new WebXmlConfiguration(),
-				new WebInfConfiguration(), new TagLibConfiguration(),
-				new MetaInfConfiguration(), new FragmentConfiguration() });
 
 		// Parent loader priority is a class loader setting that Jetty accepts.
 		// By default Jetty will behave like most web containers in that it will
