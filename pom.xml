@@ -24,6 +24,12 @@
 
 		<!-- Jetty -->
 		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>jetty-hightide</artifactId>
+			<version>${jetty-version}</version>
+			<type>zip</type>
+		</dependency>
+		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
 			<version>${jetty-version}</version>
@@ -32,6 +38,12 @@
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
 			<version>${jetty-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-annotations</artifactId>
+			<version>${jetty-version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
