@@ -18,6 +18,17 @@
     <servlet-name>hello</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LongRun</servlet-name>
+    <servlet-class>com.example.LongRunServlet</servlet-class>
+    <async-supported>true</async-supported>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LongRun</servlet-name>
+    <url-pattern>/long</url-pattern>
+  </servlet-mapping>
 
 
 </web-app>
